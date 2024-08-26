@@ -4,25 +4,25 @@ import AddCreator from "./pages/AddCreator";
 import EditCreator from "./pages/EditCreator";
 import ShowCreator from "./pages/ShowCreators";
 import ViewCreator from "./pages/ViewCreator";
-import { supabase } from "./client";
+// import { supabase } from "./client";
 function App() {
-  const [creators, setCreators] = useState([]);
+  // const [creators, setCreators] = useState([]);
 
-  useEffect(() => {
-    const fetchCreators = async () => {
-      const { data, error } = await supabase
-        .from('creators')
-        .select('*');
+  // useEffect(() => {
+  //   const fetchCreators = async () => {
+  //     const { data, error } = await supabase
+  //       .from('creators')
+  //       .select('*');
 
-      if (error) {
-        console.error("Error fetching data: ", error);
-      } else {
-        setCreators(data);
-      }
-    };
+  //     if (error) {
+  //       console.error("Error fetching data: ", error);
+  //     } else {
+  //       setCreators(data);
+  //     }
+  //   };
 
-    fetchCreators();
-  }, []);
+  //   fetchCreators();
+  // }, []);
   let routes = useRoutes([
     { path: "/", element: <ShowCreator/> },
     { path: "/creator/:id", element: <ViewCreator /> },
